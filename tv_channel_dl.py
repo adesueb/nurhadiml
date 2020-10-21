@@ -55,7 +55,7 @@ model.fit(X_TRAIN,Y_TRAIN, epochs=10, validation_split=0.1)
 #for testing
 for img in os.listdir(TESTDIR):
     try:
-        img_array = cv.imread(os.path.join(path, img))
+        img_array = cv.imread(os.path.join(TESTDIR, img))
         new_img = cv.resize(img_array, (IMG_SIZE, IMG_SIZE))
         new_shape = new_img.reshape(-1, IMG_SIZE, IMG_SIZE, 3)
         predictions = model.predict(new_shape)
